@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endterm Project</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- CSS Style -->
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        .fade-out {
+        animation: fadeOut 0.5s forwards;
+        }
+          
+         @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.98);
+              }
+            }
+    </style>               
+  <script type="module" crossorigin src="/caro003/assets/index-pckUGivI.js"></script>
+  <link rel="stylesheet" crossorigin href="/caro003/assets/index-B2GqC4on.css">
+</head>
+<body class="bg-gray-100">
+    <section class="">
+        <div class="container-body pt-40">
+            <div class="container-login" id="login-container">
+                
+                <div class="form-box log-in-form-container">
+                    <form action="#" id="log-in-form" novalidate>
+                        <h1 class="block text-xl font-bold leading-relaxed tracking-tight text-gray-900 md:text-4xl sm:text-4xl">
+                            Welcome back
+                        </h1>
+
+                        <!-- FORM LOG IN EMAIL -->
+                        <div class="relative z-0 w-full mb-5 group field">
+                            <div id="log-in-email-shake">
+                                <input type="email" name="log-in-email" id="log-in-email"
+                                    aria-describedby="standard_success_help"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 appearance-none border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:border-blue-600 peer focus:outline-none focus:ring-0"
+                                    placeholder=" " required />
+                                <!-- 
+                                border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:border-blue-600
+
+                                border-green-600 dark:border-green-500 dark:focus:border-green-500 focus:border-green-600 " -->
+                                <label for="log-in-email"
+                                    class="peer-focus:font-bold
+                                      absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    <i class="fa-solid fa-envelope mr-3"></i>Email</label>
+                                <i id="log-in-email-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="log-in-email-error"
+                                    class="log-in-email-error error error-txt font-bold mt-1 hidden">Email can't
+                                    be blank</p>
+                            </div>
+                        </div>
+                        <!-- FORM LOG IN PASSWORD -->
+                        <div class="relative z-0 w-full mb-5 group field">
+                            <div id="log-in-password-shake">
+                                <input type="password" name="log-in-password" id="log-in-password"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="log-in-password"
+                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"><i
+                                        class="fa-solid fa-key mr-3"></i>Password</label>
+                                <i id="log-in-password-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="log-in-password-error" class="error error-txt font-bold mt-1 hidden">Password
+                                    can't be blank</p>
+                            </div>
+                        </div>
+                        <!-- OTP Section -->
+                        <div id="otpSection" class="mt-6 hidden">
+                            <div class="mb-4">
+                                <label for="otp" class="block text-gray-700 font-medium mb-2">Enter OTP</label>
+                                <input type="text" id="otp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter received OTP">
+                            </div>
+                            <button type="button" onclick="verifyLoginOTP()" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                Verify OTP
+                            </button>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" aria-describedby="remember" type="checkbox"
+                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="remember" class="text-gray-500">Remember me</label>
+                                </div>
+                            </div>
+                            <a href="#"
+                                id="forgot-password-link"
+                                class="text-sm font-normal underline text-blue-600 hover:underline dark:text-primary-500">Forgot
+                                password</a>
+                        </div>
+
+                        <!-- LOG IN BUTTON -->
+                        <button type="submit" id="log-in-submit"
+                            class="font-bold uppercase log-in-action text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 rounded-lg text-sm px-5 py-6 text-center flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mt-5 me-2 mb-2">
+                            Log In
+                        </button>
+                        <p id="error-msg" class="text-red-500 text-center mt-2 hidden font-semibold">Wrong Email Or
+                            Password</p>
+                        <p class="text-sm font-semibold text-dark mr-3 inline">
+                            Don’t have an account?
+                        <p href="#" class="font-medium text-primary-600 dark:text-primary-500 inline">Sign
+                            up for free</p>
+                        </p>
+                        <!-- SWITCH SIGN UP FORM -->
+                        <button type="button" id="sign-up-button"
+                            class="font-semibold uppercase sign-up-button sign-up-action text-black bg-[#fff] hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300 rounded-lg text-sm px-5 py-3 text-center flex items-center dark:focus:ring-gray-300 dark:hover:bg-gray-300 me-2 mb-2">
+                            Sign Up Here
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="container-signup  hidden" id="signup-container">
+                <!-- Sign Up Form -->
+                <div class="form-box1 sign-up-form-container">
+                    <form action="#" id="sign-up-form" novalidate>
+                        <!-- SIGN UP FORM USERNAME -->
+                        <div class="relative z-0 w-full mb-3 group field">
+                            <div id="sign-up-name-shake">
+                                <input type="text" name="sign-up-user-name" id="sign-up-name"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="sign-up-user-name"
+                                    class="peer-focus:font-bold
+                                  absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    <i class="fa-solid fa-user mr-3"></i>Username </label>
+                                <i id="sign-up-name-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="sign-up-name-error" class="error error-txt font-bold hidden">Name can't be blank
+                                </p>
+                            </div>
+                        </div>
+                        <!-- SIGN UP FORM EMAIL -->
+                        <div class="relative z-0 w-full mb-3 group field">
+                            <div id="sign-up-email-shake">
+                                <input type="email" name="sign-up-email" id="sign-up-email"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="floating_email"
+                                    class="peer-focus:font-bold
+                                  absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                                    <i class="fa-solid fa-envelope mr-3"></i>Email </label>
+                                <i id="sign-up-email-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="sign-up-email-error" class="error error-txt font-bold hidden">Email can't be
+                                    blank
+                                </p>
+                            </div>
+                        </div>
+                        <!-- SIGN UP FORM PASSWORD -->
+                        <div class="relative z-0 w-full mb-3 group field">
+                            <div id="sign-up-password-shake">
+                                <input type="password" name="floating_password" id="sign-up-password"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="floating_password"
+                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"><i
+                                        class="fa-solid fa-lock mr-3"></i></i>Password</label>
+                                <i id="sign-up-password-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="sign-up-password-error" class="error error-txt font-bold hidden">Password can't
+                                    be
+                                    blank</p>
+                            </div>
+                        </div>
+                        <!-- SIGN UP FORM CONFIRM PASSWORD -->
+                        <div class="relative z-0 w-full mb-3 group field">
+                            <div id="sign-up-confirm-password-shake">
+                                <input type="password" name="floating_password" id="sign-up-confirm-password"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    placeholder=" " required />
+                                <label for="floating_password"
+                                    class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"><i
+                                        class="fa-solid fa-unlock mr-3"></i>Confirm Password</label>
+                                <i id="sign-up-confirm-password-error-icon"
+                                    class="error error-icon fa-solid fa-circle-exclamation hidden"></i>
+                                <p id="sign-up-confirm-password-error" class="error error-txt font-bold hidden">
+                                    Confirm
+                                    passowrd can't be blank</p>
+                            </div>
+                        </div>
+
+                        <!-- SIGN UP BUTTON -->
+                        <button onclick="register()" id="sign-up-submit"
+                            class="font-semibold uppercase sign-up-action text-black bg-[#fff] hover:bg-gray-300 focus:ring-4 focus:outline-none focus:bg-gray-300  rounded-lg text-sm px-5 py-6 text-center flex items-center dark:focus:ring-gray-300 dark:hover:bg-gray-300 me-2 mb-2 mt-5">
+                            Sign Up
+                        </button>
+                        <p id="error-msg" class="text-red-500 text-center mt-2 hidden">Email Already Exists</p>
+                        <p class="text-sm font-semibold text-dark mr-3 inline">
+                            Already have an account?
+                        <p href="#" class="font-medium text-primary-600 dark:text-primary-500 inline">Log
+                            in your account</p>
+                        </p>
+                        <!-- SWITCH LOG IN FORM -->
+                        <button type="button" id="log-in-button"
+                            class="font-semibold uppercase log-in-button sign-up-action text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 rounded-lg text-sm px-5 py-3 text-center flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2">
+                            Back to Log In
+                        </button>
+
+
+                    </form>
+                </div>
+                <!-- Thông báo hiển thị khi đăng ký hoặc đăng nhập thành công -->
+                <div id="toast-container" class="fixed top-5 right-5 space-y-2 z-50"></div>
+
+                <!-- TOGGLE BOX -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        const forgotPasswordLink = document.getElementById('forgot-password-link');
+      
+        forgotPasswordLink.addEventListener('click', (e) => {
+          e.preventDefault(); // Stop the default link jump
+      
+          document.body.classList.add('fade-out');
+      
+          setTimeout(() => {
+            window.location.href = 'otp.html';
+          }, 500); // 500ms for the fade-out
+        });
+      </script>      
+</body>
+</html>z-0
