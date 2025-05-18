@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OTP Verification</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("nlGtaImwvVo-fr_yI"); // <-- Replace with your EmailJS user ID
+    })();
+  </script>
+
+  <style>
+    body {
+      opacity: 0;
+      transform: scale(0.98);
+      animation: fadeIn 0.5s forwards;
+      background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+    }
+  
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>  
+</head>
+
+<body class="flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md border border-gray-200">
+    <h2 class="text-2xl font-bold mb-6 text-center">OTP Verification</h2>
+
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 font-bold mb-2 ">Email Address: </label>
+      <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email">
+    </div>
+
+    <button onclick="sendOTP()" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+      Send OTP
+    </button>
+
+    <div id="otpSection" class="mt-6 hidden">
+      <div class="mb-4">
+        <label for="otp" class="block text-gray-700 font-medium mb-2">Enter OTP</label>
+        <input type="text" id="otp" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter received OTP">
+      </div>
+
+      <button onclick="verifyOTP()" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300">
+        Verify OTP
+      </button>
+    </div>
+
+    <p id="status" class="mt-4 text-center font-semibold text-gray-700"></p>
+  </div>
+
+  <script src="otp.js"></script>
+</body>
+</html>
